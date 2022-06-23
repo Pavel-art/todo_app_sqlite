@@ -35,12 +35,12 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: const TodoList(),
-      floatingActionButton: myfloatingAvtionButton(context),
+      floatingActionButton: myFloatingActionButton(context),
     );
   }
 }
 
-Widget myfloatingAvtionButton(BuildContext context) {
+Widget myFloatingActionButton(BuildContext context) {
   return FloatingActionButton(
     onPressed: () => showDialog<String>(
         context: context, builder: (context) => TodoAlertDialog(action: ActionDialog.addTodoAlertDialog,)),
