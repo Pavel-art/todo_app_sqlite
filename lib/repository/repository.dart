@@ -2,13 +2,13 @@ import 'data_source.dart';
 import 'model.dart';
 
 class TodoRepository {
-  final DBProvider todoprovider = DBProvider.db;
+  final DBProvider todoProvider = DBProvider.db;
  
 
-  Future<List<Todo>> getAlltodos() => todoprovider.getTodos();
-  Future<Todo> insertTodo (Todo todo) => todoprovider.insertTodo(todo);
-  Future<int> updateTodo (Todo todo) => todoprovider.updateTodo(todo);
-  Future<int>deletTodo (Todo todo) => todoprovider.deleteTodo(todo);
+  Future<List<Todo>> getAllTodos() => todoProvider.getTodos();
+  Future<Todo> insertTodo (Todo todo) => todoProvider.insertTodo(todo);
+  Future<int> updateTodo (Todo todo) => todoProvider.updateTodo(todo);
+  Future<int>deleteTodo (Todo todo) => todoProvider.deleteTodo(todo);
 }
 
 

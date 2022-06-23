@@ -27,7 +27,7 @@ final TodoRepository repository;
   Future<void> fetchTodos() async {
     try {
       emit(LoadingState());
-      final List<Todo> loadedTodoList = await repository.getAlltodos();
+      final List<Todo> loadedTodoList = await repository.getAllTodos();
       emit(LoadedState(todolist: loadedTodoList));
     } catch (_) {
       emit(ErrorState());
@@ -36,7 +36,7 @@ final TodoRepository repository;
   Future<void> addTodo(Todo todo) async {
     try {
       repository.insertTodo(todo);
-      final List<Todo> loadedTodoList = await repository.getAlltodos();
+      final List<Todo> loadedTodoList = await repository.getAllTodos();
       emit(LoadedState(todolist: loadedTodoList));
     } catch (_) {
       emit(ErrorState());
@@ -47,7 +47,7 @@ final TodoRepository repository;
 Future<void> updateTodo (Todo todo) async {
   try {
       repository.updateTodo(todo);
-      final List<Todo> loadedTodoList = await repository.getAlltodos();
+      final List<Todo> loadedTodoList = await repository.getAllTodos();
       emit(LoadedState(todolist: loadedTodoList));
     } catch (_) {
       emit(ErrorState());
@@ -57,8 +57,8 @@ Future<void> updateTodo (Todo todo) async {
 
  Future<void> removeTodo(Todo todo) async {
     try {
-      repository.deletTodo(todo);
-      final List<Todo> loadedTodoList = await repository.getAlltodos();
+      repository.deleteTodo(todo);
+      final List<Todo> loadedTodoList = await repository.getAllTodos();
       emit(LoadedState(todolist: loadedTodoList));
     } catch (_) {
       emit(ErrorState());
